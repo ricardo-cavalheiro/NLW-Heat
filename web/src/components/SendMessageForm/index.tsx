@@ -1,5 +1,7 @@
 import { FormEvent, useContext, useState } from 'react';
 import { VscGithubInverted, VscSignOut } from 'react-icons/vsc';
+
+// styles
 import styles from './styles.module.scss';
 
 // contexts
@@ -9,6 +11,7 @@ import { api } from '../../services/api';
 export function SendMessageForm() {
   // states
   const [message, setMessage] = useState('');
+  const [messageSent, setMessageSent] = useState(false);
 
   // context
   const { user, signOut } = useContext(AuthContext);
@@ -20,9 +23,16 @@ export function SendMessageForm() {
       return;
     }
 
-    await api.post('messages', { message });
+    try {
+      await api.post('messages', { message });
 
-    setMessage('')
+      setMessage('');
+      setMessageSent(true);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setTimeout(() => setMessageSent(false), 5000);
+    }
   }
 
   return (
@@ -51,7 +61,12 @@ export function SendMessageForm() {
           value={message}
           onChange={({ target }) => setMessage(target.value)}
         />
-        <button type='submit'>Enviar mensagem</button>
+        <button
+          type='submit'
+          className={messageSent ? styles.messageSent : styles.sendMessage}
+        >
+          {messageSent ? 'Mensagem enviada!' : 'Enviar mensagem'}
+        </button>
       </form>
     </div>
   );
