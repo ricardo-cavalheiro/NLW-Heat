@@ -99,7 +99,7 @@
     }
   }
 
-  button {
+  > button {
     align-self: flex-end;
     border: 0;
     background: #ff008e;
@@ -117,8 +117,14 @@
     align-items: center;
     justify-content: center;
 
+    transition: background 500ms;
+
     &:hover {
       filter: brightness(0.9);
     }
+  }
+
+  .messageSent {
+    background: #1b873f;
   }
 }
