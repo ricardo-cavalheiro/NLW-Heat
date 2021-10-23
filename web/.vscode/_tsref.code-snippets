@@ -1,0 +1,12 @@
+{
+  "TypeScript React Export Function": {
+    "scope": "typescriptreact",
+    "prefix": "_tsref",
+    "body": [
+      "export function ${1:$TM_FILENAME_BASE}() {",
+      "\treturn (<div></div>)",
+      "}"
+    ],
+    "description": "Creates a named export function for React > v17."
+  }
+}

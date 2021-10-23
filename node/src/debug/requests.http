@@ -1,0 +1,32 @@
+POST http://localhost:4000/authenticate HTTP/1.1
+content-type: application/json
+
+{
+  "code": "8d5d47bf54a5dd6a8853"
+}
+
+###
+
+POST http://localhost:4000/messages HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSaWNhcmRvIiwiYXZhdGFyX3VybCI6Imh0dHBzOi8vYXZhdGFycy5naXRodWJ1c2VyY29udGVudC5jb20vdS84MTgzMDA2Mj92PTQiLCJpZCI6IjllYmY0MDBkLTQ3NmUtNDY5MC1iMjFjLTc5MzY2OTY5ZDRmZSJ9LCJpYXQiOjE2MzQ3MTc4NjAsImV4cCI6MTYzNDgwNDI2MCwic3ViIjoiOWViZjQwMGQtNDc2ZS00NjkwLWIyMWMtNzkzNjY5NjlkNGZlIn0.0LMtFhUHVCxw9PdIExso9jZDlasBSb7rwKBuFcyS5pE
+
+{
+  "message": "Estou ansioso demais pelo Do While"
+}
+
+###
+
+GET  http://localhost:4000/messages/last3 HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSaWNhcmRvIiwiYXZhdGFyX3VybCI6Imh0dHBzOi8vYXZhdGFycy5naXRodWJ1c2VyY29udGVudC5jb20vdS84MTgzMDA2Mj92PTQiLCJpZCI6IjllYmY0MDBkLTQ3NmUtNDY5MC1iMjFjLTc5MzY2OTY5ZDRmZSJ9LCJpYXQiOjE2MzQ3MTc4NjAsImV4cCI6MTYzNDgwNDI2MCwic3ViIjoiOWViZjQwMGQtNDc2ZS00NjkwLWIyMWMtNzkzNjY5NjlkNGZlIn0.0LMtFhUHVCxw9PdIExso9jZDlasBSb7rwKBuFcyS5pE
+
+{
+  "message": "Estou ansioso pelo Do While"
+}
+
+###
+
+GET  http://localhost:4000/profile HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSaWNhcmRvIiwiYXZhdGFyX3VybCI6Imh0dHBzOi8vYXZhdGFycy5naXRodWJ1c2VyY29udGVudC5jb20vdS84MTgzMDA2Mj92PTQiLCJpZCI6IjllYmY0MDBkLTQ3NmUtNDY5MC1iMjFjLTc5MzY2OTY5ZDRmZSJ9LCJpYXQiOjE2MzQ3MTc4NjAsImV4cCI6MTYzNDgwNDI2MCwic3ViIjoiOWViZjQwMGQtNDc2ZS00NjkwLWIyMWMtNzkzNjY5NjlkNGZlIn0.0LMtFhUHVCxw9PdIExso9jZDlasBSb7rwKBuFcyS5pE

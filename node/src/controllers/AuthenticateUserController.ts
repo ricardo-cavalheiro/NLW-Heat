@@ -1,0 +1,17 @@
+import type { Request, Response } from 'express';
+import { AuthenticateUserService } from '../services/AuthenticateUserService';
+
+export class AuthenticateUserController {
+  async handle(request: Request, response: Response) {
+    const { code } = request.body;
+
+    const service = new AuthenticateUserService();
+
+    try {
+      const result = await service.execute(code);
+      return response.json(result);
+    } catch (error: any) {
+      return response.json({ error: error.message });
+    }
+  }
+}
